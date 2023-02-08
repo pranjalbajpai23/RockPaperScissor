@@ -1,0 +1,157 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212121;
+
+    outline-offset: 4px;
+    font-family: 'Play', sans-serif;
+  
+}
+.pushable{
+    border: none;
+    padding: 0;
+    outline-offset: 4px;
+    background-color: #323232;
+    border-radius: 5.5px;
+
+}
+.start{
+    position: relative;
+    display: inline-block;
+    background-color: #4b4b4b;
+    padding: 25px 25px;
+    margin: 0px 0;
+    font-size: 3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #14FFEC;
+    transition: 0.5s;
+    letter-spacing: 5px;
+    overflow: hidden;
+    transform: translateY(-6px);
+    border-radius: 5.5px;
+    cursor: pointer;
+    
+}
+.start:hover{
+    opacity: 1;
+    background-color:#14FFEC;
+    color: #0D7377;
+    box-shadow: 0 0 15px #14FFEC,
+                0 0 50px #14FFEC,
+                0 0 100px #14FFEC,
+                0 0 250px #14FFEC;
+    -webkit-box-reflect: below 2px linear-gradient(transparent,rgba(36, 36, 36, 0.151));
+}
+.pushable:active .start{
+    transform: translateY(-1px);
+}
+.start span{
+    position: absolute;
+    display: block;
+}
+.start span:nth-child(1){
+    top:0;
+    left:-100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#14FFEC);
+    animation: animate1 1s linear infinite;
+    animation-delay: 0.25s;
+
+}
+.start span:nth-child(2){
+    top:-100%;
+    right:0%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#14FFEC);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.5s;
+
+}
+.start span:nth-child(3){
+    bottom:0%;
+    right:-100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#14FFEC);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.75s;
+
+}
+.start span:nth-child(4){
+    bottom: -100%;
+    left:0%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#14FFEC);
+    animation: animate4 1s linear infinite;
+    animation-delay: 1s;
+
+}
+@keyframes animate1 {
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left:100% ;
+    }
+}
+@keyframes animate2 {
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top:100% ;
+    }
+}
+@keyframes animate3 {
+    0%{
+        right:-100%;
+    }
+    50%,100%{
+        right:100% ;
+    }
+}
+@keyframes animate4 {
+    0%{
+        bottom:-100%;
+    }
+    50%,100%{
+        bottom:100% ;
+    }
+}
+.remove{
+    animation: removeanimate 1s linear;
+}
+@keyframes removeanimate {
+    from{
+        filter: brightness(1000%);
+        box-shadow: 0 0 15px #14FFEC,
+        0 0 50px #14FFEC,
+        0 0 100px #14FFEC,
+        0 0 250px #14FFEC;
+    }
+    to{
+        filter: brightness(0%);
+        box-shadow: 0 0 15px #14FFEC,
+        0 0 100px #36d1c7,
+        0 0 400px #38e0d2,
+        0 0 650px #61faed,
+        0 0 650px #e3f5f3,
+        0 0 650px #e2f8f6;
+    }
+}

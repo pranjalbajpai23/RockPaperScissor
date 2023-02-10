@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container n-result">
         <div class="pushable">
-            <a href="#" class="start">
+            <a href="#" class="start btn">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -20,6 +20,58 @@
             </a>
         </div>
     </div>
-    
+    <div class="container-2 displaynone n-result">
+        <div class="computerOptions">
+            <img src="/images/rock.png" alt="">
+        </div>
+        <div class="userOptions">
+            <div class="pushable">
+                <a href="#" class="btn" id="rock">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Rock
+                </a>
+            </div>
+            <div class="pushable">
+                <a href="#" class="btn" id="paper">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Paper
+                </a>
+            </div>
+            <div class="pushable">
+                <a href="#" class="btn" id="scissor">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Scissor
+                </a>
+            </div>
+        </div>
+        <div class="pointsTable n-result">
+            <div class="phead">Points</div>
+            <div class="pcomputer pointsTableInner">
+                <div class="headingsUC">Computer</div>
+                <span class="score" id="computerScore">0</span>
+            </div>
+            <div class="puser pointsTableInner">
+                <div class="headingsUC">Your</div>
+                <span class="score" id="userScore">0</span>
+            </div>
+        </div>
+    </div>
+    <div class="uwin displaynone winlos">
+        <img src="/images/usrWin.png" alt="" srcset="">
+        <span>You Won!</span>
+    </div>
+    <div class="cwin displaynone winlos">
+        <img src="/images/pcWin.png" alt="" srcset="">
+        <span>You Lost!</span>
+    </div>
 </body>
 </html>

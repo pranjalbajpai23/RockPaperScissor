@@ -7,6 +7,7 @@ const paper_btn=document.getElementById('paper');
 const scissor_btn=document.getElementById('scissor');
 const computerImg=document.getElementsByClassName("computerImg")[0];
 const cOption=document.getElementsByClassName('cOption')[0];
+const Choose= document.getElementsByClassName('Choose')[0];
 let Cscore=document.getElementById('computerScore');
 let Uscore=document.getElementById('userScore');
 
@@ -57,11 +58,13 @@ rock_btn.addEventListener('click',()=>{
    var item = options[Math.floor(Math.random()*options.length)];
    computerImg.src="images/"+String(item)+".png";
    computerImg.classList.remove('gestureAnimation');
-   cOption.innerText=item + " (...wait 1s,thinking what to throw next)";
+   Choose.innerText=" "+item;
+   cOption.innerText=" (...wait 1s,thinking what to throw next)";
    setTimeout(()=>{
       computerImg.classList.add('gestureAnimation');
       computerImg.src="images/rock.png";
       cOption.innerText="Ready!!";
+      Choose.innerText="";
    },1000)
    if(item=='scissor'){
       score=Number(Uscore.innerText);
@@ -91,11 +94,13 @@ paper_btn.addEventListener('click',()=>{
    var item = options[Math.floor(Math.random()*options.length)];
    computerImg.src="images/"+String(item)+".png";
    computerImg.classList.remove('gestureAnimation');
-   cOption.innerText=item + " (...wait 1s,thinking what to throw next)";
+   Choose.innerText=" "+item;
+   cOption.innerText=" (...wait 1s,thinking what to throw next)";
    setTimeout(()=>{
       computerImg.classList.add('gestureAnimation');
       computerImg.src="images/rock.png";
       cOption.innerText="Ready!!";
+      Choose.innerText="";
    },1000)
    if(item=='scissor'){
       score=Number(Uscore.innerText);
@@ -125,11 +130,13 @@ scissor_btn.addEventListener('click',()=>{
    var item = options[Math.floor(Math.random()*options.length)];
    computerImg.src="images/"+String(item)+".png";
    computerImg.classList.remove('gestureAnimation');
-   cOption.innerText=item + " (...wait 1s,thinking what to throw next)";
+   Choose.innerText=" "+item;
+   cOption.innerText=" (...wait 1s,thinking what to throw next)";
    setTimeout(()=>{
       computerImg.classList.add('gestureAnimation');
       computerImg.src="images/rock.png";
       cOption.innerText="Ready!!";
+      Choose.innerText="";
    },1000)
    if(item=='rock'){
       score=Number(Uscore.innerText);

@@ -4,7 +4,9 @@ const pushable_start=document.getElementsByClassName('pushable')[0];
 const container2=document.getElementsByClassName('container-2')[0];
 const rock_btn=document.getElementById('rock');
 const paper_btn=document.getElementById('paper');
-const Scissor_btn=document.getElementById('scissor');
+const scissor_btn=document.getElementById('scissor');
+const computerImg=document.getElementsByClassName("computerImg")[0];
+const cOption=document.getElementsByClassName('cOption')[0];
 let Cscore=document.getElementById('computerScore');
 let Uscore=document.getElementById('userScore');
 
@@ -25,7 +27,7 @@ function autoremoveTied(){
    setTimeout(()=>{
       Cscore.innerText= scoreC;
       Uscore.innerText= scoreU;
-   },500);
+   },1000);
    Cscore.innerText="Tied!!";
    Uscore.innerText="Tied!!";
 }
@@ -51,9 +53,17 @@ function cwin(){
 
 
 rock_btn.addEventListener('click',()=>{
-   var options=['Rock','Paper','Scissor'];
+   var options=['rock','paper','scissor'];
    var item = options[Math.floor(Math.random()*options.length)];
-   if(item=='Scissor'){
+   computerImg.src="images/"+String(item)+".png";
+   computerImg.classList.remove('gestureAnimation');
+   cOption.innerText=item + " (...wait 1s,thinking what to throw next)";
+   setTimeout(()=>{
+      computerImg.classList.add('gestureAnimation');
+      computerImg.src="images/rock.png";
+      cOption.innerText="Ready!!";
+   },1000)
+   if(item=='scissor'){
       score=Number(Uscore.innerText);
       score=score+1;
       Uscore.innerText=score;
@@ -61,7 +71,7 @@ rock_btn.addEventListener('click',()=>{
          uwin();
       }
    }
-   else if(item=='Rock'){
+   else if(item=='rock'){
      autoremoveTied();
    }
    else{
@@ -77,9 +87,17 @@ rock_btn.addEventListener('click',()=>{
 
 
 paper_btn.addEventListener('click',()=>{
-   var options=['Rock','Paper','Scissor'];
+   var options=['rock','paper','scissor'];
    var item = options[Math.floor(Math.random()*options.length)];
-   if(item=='Scissor'){
+   computerImg.src="images/"+String(item)+".png";
+   computerImg.classList.remove('gestureAnimation');
+   cOption.innerText=item + " (...wait 1s,thinking what to throw next)";
+   setTimeout(()=>{
+      computerImg.classList.add('gestureAnimation');
+      computerImg.src="images/rock.png";
+      cOption.innerText="Ready!!";
+   },1000)
+   if(item=='scissor'){
       score=Number(Uscore.innerText);
       score=score+1;
       Uscore.innerText=score;
@@ -87,7 +105,7 @@ paper_btn.addEventListener('click',()=>{
          uwin();
       }
    }
-   else if(item=='Paper'){
+   else if(item=='paper'){
      autoremoveTied();
    }
    else{
@@ -102,10 +120,18 @@ paper_btn.addEventListener('click',()=>{
 
 
 
-Scissor_btn.addEventListener('click',()=>{
-   var options=['Rock','Paper','Scissor'];
+scissor_btn.addEventListener('click',()=>{
+   var options=['rock','paper','scissor'];
    var item = options[Math.floor(Math.random()*options.length)];
-   if(item=='Rock'){
+   computerImg.src="images/"+String(item)+".png";
+   computerImg.classList.remove('gestureAnimation');
+   cOption.innerText=item + " (...wait 1s,thinking what to throw next)";
+   setTimeout(()=>{
+      computerImg.classList.add('gestureAnimation');
+      computerImg.src="images/rock.png";
+      cOption.innerText="Ready!!";
+   },1000)
+   if(item=='rock'){
       score=Number(Uscore.innerText);
       score=score+1;
       Uscore.innerText=score;
@@ -113,7 +139,7 @@ Scissor_btn.addEventListener('click',()=>{
          uwin();
       }
    }
-   else if(item=='Scissor'){
+   else if(item=='scissor'){
      autoremoveTied();
    }
    else{

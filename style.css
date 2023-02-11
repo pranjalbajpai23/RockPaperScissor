@@ -205,14 +205,38 @@
     width: 50vw;
     display: flex;
     justify-content: center;
-}         
-.computerOptions img{
-    width: 25vw;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3vw;
+    color: #14FFEC;
+    gap:3vh;
+    height:70vh;
+    
+} 
+
+.computerChoose{
+    z-index:999 ;
+    height: 30%;  
+}
+.imgContainer{
+    height: 70%;
+}       
+.imgContainer img{
+    width: 25vw;   
+}   
+.gestureAnimation{
     animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
     animation-duration: 2.5s;        /* Change to speed up or slow down */
     animation-iteration-count: infinite;  /* Never stop waving :) */
-    transform-origin: 0% 50%;       
-}   
+    transform-origin: 0% 50%;
+}
+.cOption{
+    font-size: 2vw;
+    color: #14FFEC;
+    z-index: 999;
+    text-align: center;
+}
+
 @keyframes wave-animation {
     0% { transform: rotate( 0.0deg) }
    10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
@@ -247,6 +271,7 @@
     font-size: 3vw;
     border: white 0.2vw solid;
     text-align: center;
+    z-index: 999;
 }
 .pointsTableInner{
     display: flex;
@@ -298,6 +323,13 @@
 
 }
 @media screen and (max-width: 480px){
+    .computerChoose{
+        font-size: 4vw;
+    }
+    .cOption{
+        font-size: 4vw;
+        color: #14FFEC;
+    }
     .btn{
         font-size: 10vw;
         width: 50vw;
@@ -307,6 +339,8 @@
     }
     .computerOptions{
         width: 40vw;
+        height: 50vh;
+
     }
     .computerOptions img{
         width: 40vw;
@@ -314,6 +348,7 @@
     .headingsUC{
         height:5vh;
     } 
+   
     .score{
         height: 5vh;
     }
